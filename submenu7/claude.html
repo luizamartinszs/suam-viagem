@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fervedouro Buritis - Turismo em Foz do Iguaçu</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    /* Menu Header */
+    .header {
+      background: linear-gradient(135deg, #81c784, #66bb6a);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      height: 70px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    .nav-menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+
+    .nav-menu a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: #f0f8f0;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 3px 0;
+      transition: 0.3s;
+    }
+
+    /* Main Content */
+    .main-content {
+      min-height: calc(100vh - 140px);
+      padding: 40px 20px;
+    }
+
+    .hero-section {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, rgba(129, 199, 132, 0.1), rgba(102, 187, 106, 0.1));
+      border-radius: 15px;
+      max-width: 1200px;
+      margin: 0 auto 40px auto;
+    }
+
+    .hero-section h1 {
+      font-size: 2.5em;
+      color: #2e7d32;
+      margin-bottom: 15px;
+    }
+
+    .hero-section p {
+      font-size: 1.2em;
+      color: #4a4a4a;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .container {
+      display: flex;
+      align-items: stretch;
+      gap: 20px;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .carousel {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .carousel img {
+      display: none;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .carousel img.active {
+      display: block;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(129, 199, 132, 0.8);
+      border: none;
+      color: white;
+      font-size: 22px;
+      padding: 8px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+      transition: background 0.3s;
+    }
+
+    .arrow:hover {
+      background-color: rgba(102, 187, 106, 1);
+    }
+
+    .arrow.left {
+      left: 10px;
+    }
+
+    .arrow.right {
+      right: 10px;
+    }
+
+    .card-body {
+      padding: 16px;
+    }
+
+    .card-body h2 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      color: #2e7d32;
+    }
+
+    .card-body p {
+      margin: 0 0 12px;
+    }
+
+    .location {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .availability {
+      background: linear-gradient(135deg, #c8e6c9, #a5d6a7);
+      color: #2e7d32;
+      padding: 5px 10px;
+      border-radius: 15px;
+      display: inline-block;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      display: flex;
+      gap: 10px;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
+    .price span:first-child {
+      color: #4caf50;
+    }
+
+    .price span:last-child {
+      color: #2e7d32;
+    }
+
+    .action-btn {
+      background: linear-gradient(135deg, #66bb6a, #4caf50);
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      width: 100%;
+      transition: all 0.3s;
+      font-size: 16px;
+    }
+
+    .action-btn:hover {
+      background: linear-gradient(135deg, #4caf50, #388e3c);
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    .footer {
+      background: linear-gradient(135deg, #2e7d32, #388e3c);
+      color: white;
+      padding: 40px 20px 20px;
+      margin-top: 60px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .footer-section h3 {
+      margin-bottom: 15px;
+      color: #c8e6c9;
+    }
+
+    .footer-section p, .footer-section a {
+      color: #e8f5e8;
+      text-decoration: none;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .footer-section a:hover {
+      color: #c8e6c9;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .social-links a {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+
+    .social-links a:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      margin-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      color: #c8e6c9;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: #66bb6a;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 20px 0;
+      }
+
+      .nav-menu.active {
+        left: 0;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+      }
+
+      .container {
+        flex-direction: column;
+      }
+
+      .hero-section h1 {
+        font-size: 2em;
+      }
+
+      .card {
+        min-width: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header/Menu -->
+  <header class="header">
+    <nav class="nav-container">
+      <a href="#" class="logo">🌿 Fervedouro Buritis</a>
+      <ul class="nav-menu">
+        <li><a href="#home">Início</a></li>
+        <li><a href="#restaurantes">Restaurantes</a></li>
+        <li><a href="#hoteis">Hotéis</a></li>
+        <li><a href="#atrações">Atrações</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <h1>Descubra Foz do Iguaçu</h1>
+      <p>Os melhores restaurantes, hotéis e atrações da cidade das Cataratas. Sua aventura começa aqui!</p>
+    </section>
+
+    <!-- Cards Section -->
+    <div class="container">
+      <div class="card">
+        <div class="carousel">
+          <img src="https://lemircomidaarabe.com.br/wp-content/uploads/2023/01/Group-14.png" class="active" alt="Imagem 1">
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/f4/e1/ab/le-mir-2019.jpg?w=800&h=-1&s=1" alt="Imagem 2">
+          <img src="https://topview.com.br/wp-content/uploads/2024/01/Um-dos-Menus-Degustacao-do-Le-Mir-foto-Leo-Antunes.jpg" alt="Imagem 3">
+          <button class="arrow left">&#10094;</button>
+          <button class="arrow right">&#10095;</button>
+        </div>
+        <div class="card-body">
+          <h2>Le Mir Comida Árabe</h2>
+          <div class="location">R. Jorge Sanwais, 1146 - Centro, Foz do Iguaçu - PR, 85851-040</div>
+          <div class="availability">Reserve</div>
+          <div>Média de valores para 2 pessoas</div>
+          <div class="price">
+            <span>R$ 60</span>
+            <span>R$ 200</span>
+          </div>
+          <p>⭐ 4,7</p>
+          <a href="https://lemircomidaarabe.com.br" target="_blank">
+            <button class="action-btn">Ver Restaurante</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="carousel">
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/30/9c/9e/familia-no-dreamland.jpg?w=1000&h=-1&s=1" class="active" alt="Imagem 1">
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/a0/f4/51/museu-de-cera-dreamland.jpg?w=1000&h=-1&s=1" alt="Imagem 2">
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/30/9c/d5/fachada-do-museu-de-cera.jpg?w=1000&h=-1&s=1" alt="Imagem 3">
+          <button class="arrow left">&#10094;</button>
+          <button class="arrow right">&#10095;</button>
+        </div>
+        <div class="card-body">
+          <h2>Dreamland - Museu de Cera</h2>
+          <div class="location">Av. das Cataratas – Vila Yolanda, Foz do Iguaçu – PR, 85853-832</div>
+          <div class="availability">Compre</div>
+          <div>Média de valores</div>
+          <div class="price">
+            <span>R$ 200</span>
+            <span>R$ 400</span>
+          </div>
+          <p>⭐ 4,5</p>
+          <a href="https://dreamsparkshow.com.br/museu-de-cera-foz-do-iguacu/" target="_blank">
+            <button class="action-btn">Ver ingresso</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="carousel">
+          <img src="https://letsimage.s3.amazonaws.com/letsbook/256/quartos/441/fotoprincipal.jpg" class="active" alt="Imagem 1">
+          <img src="https://static.pmweb.com.br/RZPjHnTJMckt91CqQtrTMY6HgqI=/https://letsimage.s3.sa-east-1.amazonaws.com/editor/nacionalinn/pt/hoteis/hotel-golden-park-internacional-foz-do-iguacu/1688080883057-copia-de-dji_0133.jpg" alt="Imagem 2">
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/6c/f0/09/golden-park-internacional.jpg?w=900&h=500&s=1" alt="Imagem 3">
+          <button class="arrow left">&#10094;</button>
+          <button class="arrow right">&#10095;</button>
+        </div>
+        <div class="card-body">
+          <h2>Hotel Golden Park Internacional Foz & Convenções</h2>
+          <div class="location">R. Alm. Barroso, 2006 – Centro, Foz do Iguaçu – PR, 85851-010</div>
+          <div class="availability">Reserve</div>
+          <div>Média de valores para 2 pessoas</div>
+          <div class="price">
+            <span>R$ 200</span>
+            <span>R$ 400</span>
+          </div>
+          <p>⭐ 4,3</p>
+          <a href="http://nacionalinn.com.br/hoteis/golden-park-internacional-foz-do-iguacu" target="_blank">
+            <button class="action-btn">Ver Hotel</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Fervedouro Buritis</h3>
+        <p>Seu guia completo para descobrir o melhor de Foz do Iguaçu. Encontre os melhores restaurantes, hotéis e atrações da cidade das Cataratas.</p>
+        <div class="social-links">
+          <a href="#">📘</a>
+          <a href="#">📷</a>
+          <a href="#">🐦</a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Links Rápidos</h3>
+        <a href="#restaurantes">Restaurantes</a>
+        <a href="#hoteis">Hotéis</a>
+        <a href="#atracoes">Atrações Turísticas</a>
+        <a href="#dicas">Dicas de Viagem</a>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Contato</h3>
+        <p>📧 contato@fervedouroburitis.com.br</p>
+        <p>📱 (45) 99999-9999</p>
+        <p>📍 Foz do Iguaçu - PR</p>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Horário de Atendimento</h3>
+        <p>Segunda a Sexta: 8h às 18h</p>
+        <p>Sábado: 9h às 16h</p>
+        <p>Domingo: Fechado</p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 Fervedouro Buritis. Todos os direitos reservados. | Desenvolvido com 💚 para turistas apaixonados por Foz do Iguaçu</p>
+    </div>
+  </footer>
+
+  <script>
+    // Carousel functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const carousels = document.querySelectorAll('.carousel');
+      
+      carousels.forEach(carousel => {
+        const images = carousel.querySelectorAll('img');
+        const leftArrow = carousel.querySelector('.arrow.left');
+        const rightArrow = carousel.querySelector('.arrow.right');
+        let currentIndex = 0;
+        
+        function showImage(index) {
+          images.forEach(img => img.classList.remove('active'));
+          images[index].classList.add('active');
+        }
+        
+        leftArrow.addEventListener('click', () => {
+          currentIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
+          showImage(currentIndex);
+        });
+        
+        rightArrow.addEventListener('click', () => {
+          currentIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
+          showImage(currentIndex);
+        });
+        
+        // Auto-advance carousel
+        setInterval(() => {
+          currentIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
+          showImage(currentIndex);
+        }, 5000);
+      });
+      
+      // Mobile menu toggle
+      const hamburger = document.querySelector('.hamburger');
+      const navMenu = document.querySelector('.nav-menu');
+      
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+      
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

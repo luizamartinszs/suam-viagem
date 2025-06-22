@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Respostas do Formulário</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 40px;
+    }
+
+    .container {
+      background-color: white;
+      max-width: 800px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .campo {
+      margin-bottom: 12px;
+    }
+
+    .campo strong {
+      display: inline-block;
+      width: 180px;
+      color: #333;
+    }
+    .botoes {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .botao {
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .botao:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Respostas do Formulário</h1>
+    <div id="respostas"></div>
+     <div class="botoes">
+      <a href="logindousuario.html" class="botao">Fazer Login</a>
+      <a href="formulario.html" class="botao">Voltar à Tela Inicial</a>
+     </div>
+     
+      
+  </div>
+
+  <script>
+    const respostas = document.getElementById('respostas');
+
+    const campos = [
+      { label: "Nome completo", chave: "nome" },
+      { label: "Data de nascimento", chave: "data" },
+      { label: "Nome materno", chave: "nomematerno" },
+      { label: "CPF", chave: "cpf" },
+      { label: "Email", chave: "email" },
+      { label: "Celular", chave: "celular" },
+       { label: "Gênero", chave: "genero" },
+      { label: "CEP", chave: "cep" },
+      { label: "Estado", chave: "estado" },
+      { label: "Cidade", chave: "cidade" },
+      { label: "Bairro", chave: "bairro" },
+      { label: "Logradouro", chave: "logradouro" },
+      { label: "Número", chave: "numero" },
+      { label: "Complemento", chave: "complemento" },
+      { label: "Login", chave: "login" },
+      { label: "Senha", chave: "senha" } 
+    ];
+
+    campos.forEach(campo => {
+      const valor = localStorage.getItem(campo.chave) || "Não informado";
+      const div = document.createElement('div');
+      div.classList.add('campo');
+      div.innerHTML = `<strong>${campo.label}:</strong> ${valor}`;
+      respostas.appendChild(div);
+    });
+  </script>
+  
+</body>
+</html>

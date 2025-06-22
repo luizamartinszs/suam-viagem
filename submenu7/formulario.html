@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de cadastro</title>
+
+  <!-- SweetAlert2 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+  <br>
+  <link rel="stylesheet" href="estiloform.css">
+  <form style="display: block;">
+    <div class="container">
+      <h1 id="titulo">Cadastre-se</h1>
+      <div class="conteúdo">
+        <div class="img">
+          <img src="foto formulario.png" alt="Imagem ilustrativa do formulário">
+        </div>
+
+        <div class="formulario">
+          <fieldset class="grupo">
+            <div class="campo">
+              <label>Nome completo:</label>
+              <input type="text" name="nome-completo" id="nome" placeholder="Digite seu nome completo" minlength="15" maxlength="80" required>
+            </div>
+
+            <div class="campo">
+              <label>Data de nascimento:</label>
+              <input type="date" name="data-nascimento" id="data" required>
+            </div>
+
+            <div class="campo">
+              <label>Nome materno:</label>
+              <input type="text" name="nome-materno" id="nomematerno" placeholder="Digite o nome da sua mãe" required>
+            </div>
+
+            <div class="campo">
+              <label>CPF:</label>
+              <input type="text" id="cpf" name="cpf" maxlength="14" placeholder="Digite seu CPF" required>
+            </div>
+          </fieldset>
+
+          <fieldset class="grupo">
+            <div class="campo">
+              <label>Email:</label>
+              <input type="email" name="email" id="email" placeholder="Digite seu email" required>
+            </div>
+
+            <div class="campo">
+              <label>Celular:</label>
+              <input type="tel" name="celular" id="celular" placeholder="(+55)xx-xxxxx-xxxx" required>
+            </div>
+          </fieldset>
+
+          <fieldset class="grupo">
+            <div id="genero" class="campo">
+              <label>Gênero:</label>
+              <label><input type="radio" name="genero" value="Feminino"> Feminino</label>
+              <label><input type="radio" name="genero" value="Masculino"> Masculino</label>
+              <label><input type="radio" name="genero" value="Outro"> Outro</label>
+              <label><input type="radio" name="genero" value="Prefiro não dizer"> Prefiro não dizer</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="grupo">
+            <div id="endereco" class="campo">
+              <label>CEP:</label>
+              <input type="text" name="cep" id="cep" placeholder="00000-000" pattern="\d{5}-\d{3}" required>
+            </div>
+
+            <div class="campo">
+              <label>Estado:</label>
+              <input type="text" name="estado" id="estado" placeholder="Digite seu Estado" required>
+            </div>
+            <div class="campo">
+              <label>Cidade:</label>
+              <input type="text" name="cidade" id="cidade" placeholder="Digite sua Cidade" required>
+            </div>
+
+            <div class="campo">
+              <label>Bairro:</label>
+              <input type="text" name="bairro" id="bairro" placeholder="Digite seu Bairro" required>
+            </div>
+            <div class="campo">
+              <label>Logradouro:</label>
+              <input type="text" name="logradouro" id="logradouro" placeholder="Digite seu logradouro" required>
+            </div>
+
+            <div class="campo">
+              <label>Número:</label>
+              <input type="text" name="numero" id="numero" placeholder="Digite o número da sua casa" required>
+            </div>
+            <div class="campo">
+              <label>Complemento:</label>
+              <input type="text" name="complemento" id="complemento" placeholder="Digite um Complemento">
+            </div>
+          </fieldset>
+
+          <fieldset class="grupo">
+            <div class="campo">
+              <label>Login:</label>
+              <input type="text" name="login" id="login" placeholder="Digite seu Login" minlength="6" maxlength="6" required>
+            </div>
+
+            <div class="campo">
+              <label>Senha:</label>
+              <input type="password" name="senha" id="senha" placeholder="Digite sua senha" minlength="8" maxlength="8" required>
+
+              <label>Confirme sua senha:</label>
+              <input type="password" name="confirmar-senha" id="confirmarsenha" placeholder="Confirme sua senha" minlength="8" maxlength="8" required>
+            </div>
+          </fieldset>
+          <div class="botoes">
+            <button onclick="respostasform()" class="botao" type="button">Enviar</button>
+            <button class="botao" type="reset">Limpar</button>
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <script>
+    function validarCPF(cpf) {
+      cpf = cpf.replace(/[^\d]+/g, '');
+      if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) return false;
+
+      let soma = 0;
+      for (let i = 0; i < 9; i++) soma += parseInt(cpf[i]) * (10 - i);
+      let dig1 = (soma * 10) % 11;
+      if (dig1 === 10 || dig1 === 11) dig1 = 0;
+      if (dig1 !== parseInt(cpf[9])) return false;
+
+      soma = 0;
+      for (let i = 0; i < 10; i++) soma += parseInt(cpf[i]) * (11 - i);
+      let dig2 = (soma * 10) % 11;
+      if (dig2 === 10 || dig2 === 11) dig2 = 0;
+      return dig2 === parseInt(cpf[10]);
+    }
+
+    function validarLogin(login) {
+      return /^[a-zA-Z]{6}$/.test(login);
+    }
+
+    function validarSenha(senha) {
+      return /^[a-zA-Z]{8}$/.test(senha);
+    }
+
+    function respostasform() {
+      let cpf = document.getElementById('cpf').value;
+      if (!validarCPF(cpf)) {
+        Swal.fire({
+          icon: 'error',
+          title: 'CPF inválido',
+          text: 'Por favor, digite um CPF válido.',
+        });
+        return;
+      }
+
+      let login = document.getElementById('login').value;
+      if (!validarLogin(login)) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Login inválido',
+          text: 'O login deve conter exatamente 6 letras.',
+        });
+        return;
+      }
+
+      let senha = document.getElementById('senha').value;
+      if (!validarSenha(senha)) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Senha inválida',
+          text: 'A senha deve conter exatamente 8 letras.',
+        });
+        return;
+      }
+
+      let confirmarSenha = document.getElementById('confirmarsenha').value;
+      if (senha !== confirmarSenha) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Senhas diferentes',
+          text: 'As senhas digitadas não coincidem.',
+        });
+        return;
+      }
+
+      localStorage.setItem('nome', document.getElementById('nome').value);
+      localStorage.setItem('data', document.getElementById('data').value);
+      localStorage.setItem('nomematerno', document.getElementById('nomematerno').value);
+      localStorage.setItem('cpf', cpf);
+      localStorage.setItem('email', document.getElementById('email').value);
+      localStorage.setItem('celular', document.getElementById('celular').value);
+      localStorage.setItem('genero', document.querySelector('input[name="genero"]:checked')?.value || '');
+      localStorage.setItem('cep', document.querySelector('input[name="cep"]').value);
+      localStorage.setItem('estado', document.querySelector('input[name="estado"]').value);
+      localStorage.setItem('cidade', document.querySelector('input[name="cidade"]').value);
+      localStorage.setItem('bairro', document.querySelector('input[name="bairro"]').value);
+      localStorage.setItem('logradouro', document.querySelector('input[name="logradouro"]').value);
+      localStorage.setItem('numero', document.querySelector('input[name="numero"]').value);
+      localStorage.setItem('complemento', document.querySelector('input[name="complemento"]').value);
+      localStorage.setItem('login', login);
+      localStorage.setItem('senha', senha);
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Sucesso!',
+        text: 'Formulário enviado com sucesso!',
+        confirmButtonText: 'OK'
+      }).then(() => {
+        window.location.href = "respostasformulario.html";
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const cepInput = document.querySelector('input[name="cep"]');
+
+      cepInput.addEventListener("blur", function () {
+        const cep = cepInput.value.replace(/\D/g, '');
+        if (cep.length !== 8) return;
+
+        fetch(`https://viacep.com.br/ws/${cep}/json/`)
+          .then(response => response.json())
+          .then(data => {
+            if (!data.erro) {
+              document.querySelector('input[name="estado"]').value = data.uf;
+              document.querySelector('input[name="cidade"]').value = data.localidade;
+              document.querySelector('input[name="bairro"]').value = data.bairro;
+              document.querySelector('input[name="logradouro"]').value = data.logradouro;
+            } else {
+              Swal.fire({
+                icon: 'warning',
+                title: 'CEP não encontrado',
+                text: 'Preencha os dados manualmente.',
+              });
+            }
+          })
+          .catch(() => {
+            Swal.fire({
+              icon: 'error',
+              title: 'Erro de conexão',
+              text: 'Erro ao acessar a API. Preencha o endereço manualmente.',
+            });
+          });
+      });
+    });
+  </script>
+</body>
+</html>
