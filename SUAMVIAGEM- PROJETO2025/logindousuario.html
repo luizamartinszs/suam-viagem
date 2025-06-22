@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="estilologin.css">
+</head>
+<body>
+
+<div class="container" style="display: block;">
+  <div class="form-box">
+    <div class="image-box">
+      <img src="foto formulario.png" alt="Personagem"> 
+    </div>
+    <div class="login-form">
+      <h2>Bem-vindo!</h2>
+      <div> 
+        <input id="usuario" type="text" placeholder="Digite seu login"  minlength="6" maxlength="6">
+      </div>
+      <div>
+        <input id="senha" type="password" placeholder="Senha" minlength="8" maxlength="8">
+      </div>
+      <button onclick="validarCampos()">Entrar</button>
+
+      <h2>
+        <p>Ainda não tem cadastro?</p>
+        <a href="formulario.html">Cadastre-se</a>
+      </h2>
+    </div>
+  </div>
+</div>
+
+<script>
+  function validarCampos() {
+    const usuario = document.getElementById('usuario').value.trim();
+    const senha = document.getElementById('senha').value.trim();
+
+    
+    const regexLogin = /^[A-Za-z]{6}$/;
+    const regexSenha = /^[A-Za-z]{8}$/;
+
+    if (!usuario || !senha) {
+      alert("Por favor, preencha todos os campos.");
+      return;
+    }
+
+    if (!regexLogin.test(usuario)) {
+      alert("O login deve conter exatamente 6 letras (sem números ou símbolos).");
+      return;
+    }
+
+    if (!regexSenha.test(senha)) {
+      alert("A senha deve conter exatamente 8 letras (sem números ou símbolos).");
+      return;
+    }
+
+    
+    
+    window.location.href = "sua_viagem.html";
+  }
+</script>
+
+</body>
+</html>
