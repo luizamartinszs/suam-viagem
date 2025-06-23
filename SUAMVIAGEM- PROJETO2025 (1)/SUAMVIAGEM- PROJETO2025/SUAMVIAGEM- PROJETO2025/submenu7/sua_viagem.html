@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Sua Viagem</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #a6e3e9, #71c9ce);
+    }
+
+    header {
+      background-color: #8BC34A;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .logo span {
+      color: #0B7189;
+    }
+
+    .login-buttons {
+      display: flex;
+      gap: 15px;
+      font-weight: bold;
+    }
+
+    .login-buttons a {
+      color: white;
+      background-color: #4CAF50;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      flex-wrap: wrap;
+    }
+
+    .texto {
+      flex: 1;
+      min-width: 300px;
+      background-color: #8BC34A;
+      padding: 30px;
+      border-radius: 12px;
+      color: white;
+      font-size: 22px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      margin: 15px;
+      font-weight: bold;
+    }
+
+    .texto {
+      text-align: center;
+    }
+
+    .mapa {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+      margin: 15px;
+    }
+
+    .mapa img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .carrossel {
+  width: 100%;
+  max-width: 1200px; 
+  height: 500px;     
+  overflow: hidden;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+.slides {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  animation: slide 24s infinite;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.slides {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  animation: slide 36s ease-in-out infinite;
+}
+
+@keyframes slide {
+  0%   { transform: translateX(0%); }
+  10%  { transform: translateX(0%); }
+
+  15%  { transform: translateX(-100%); }
+  25%  { transform: translateX(-100%); }
+
+  30%  { transform: translateX(-200%); }
+  40%  { transform: translateX(-200%); }
+
+  45%  { transform: translateX(0%); }
+  100% { transform: translateX(0%); }
+}
+
+    footer {
+  background-color: #8BC34A;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.footer-logo span {
+  color: #0B7189;
+}
+
+.footer-links {
+  margin: 15px 0;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-social a {
+  font-size: 20px;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  opacity: 0.7;
+}
+
+#toggle-acessibilidade {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+#toggle-acessibilidade:hover {
+  background-color: #555;
+}
+
+
+body.dark-mode {
+  background: #121212;
+  color: #eeeeee;
+}
+
+body.dark-mode header {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .texto,
+body.dark-mode .clima,
+body.dark-mode footer,
+body.dark-mode .carrossel {
+  background-color: #2a2a2a;
+  color: #eeeeee;
+}
+
+body.dark-mode nav a,
+body.dark-mode .footer-links a {
+  color: #90caf9;
+}
+
+.clima {
+  text-align: center;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #71c9ce;
+  color: white;
+  border-radius: 12px;
+  width: fit-content;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.clima-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.clima-card {
+  background-color: #8BC34A;
+  padding: 15px;
+  border-radius: 10px;
+  width: 150px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.clima-card img {
+  width: 50px;
+  margin-top: 5px;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">SUAM <span>VIAGEM</span></div>
+    <nav>
+      <a href="sua_viagem.html">INÍCIO</a>
+      <a href="sobrenos.html">SOBRE NÓS</a>
+    </nav>
+    <div class="login-buttons">
+      <a href="formulario.html">CADASTRE-SE</a>
+      <a href="logindousuario.html">LOGIN</a>
+    </div>
+  </header>
+
+  <div class="texto">
+    Clique em uma região do mapa e começa sua nova aventura!
+  </div>
+
+  <section class="container">
+    <div class="mapa">
+<img src="pngwing.com.png" usemap="#image-map">
+
+<map name="image-map">
+    <area target="_blank" alt="Sudeste" 
+    title="Sudeste" href="sudeste.html"
+    coords="441,291,323,401,390,463,477,429,522,360,503,361,493,346,504,337,482,332,495,345,493,346,501,328" 
+    shape="poly">
+
+    <area target="_blank" alt="Sul" 
+    title="Sul" href="sul.html" 
+    coords="321,408,253,523,313,595,386,510,367,442,345,426,339,419" 
+    shape="poly">
+
+    
+    <area target="_blank" alt="Centro-Oeste"
+     title="Centro-Oeste" href="centro-oeste.html"
+    coords="188,218,350,235,417,307,349,377,277,446,272,457,233,372,213,314,212,320"
+    shape="poly">
+
+
+    <area target="_blank" alt="Nordeste"
+     title="Nordeste" href="nordeste.html" 
+     coords="592,163,425,101,398,158,410,231,420,311,516,362,589,230,588,225,588,218,594,214,593,182"
+    shape="poly">
+
+    <area target="_blank" 
+    alt="Norte" title="Norte" href="norte.html" 
+    coords="242,196,357,228,413,275,398,169,419,101,338,24,180,0,150,11,37,63,37,63,15,164,2,215,33,243,49,249,83,259,166,264,118,241,54,244,203,296,189,216,156,262"
+     shape="poly">
+</map>
+
+
+
+</map>
+
+
+    
+    <div class="texto">
+      "Descubra o Brasil, um destino de cada vez. Sua próxima aventura começa aqui."
+    </div>
+  </section>
+<section class="carrossel">
+  <div class="slides">
+    <div class="slide"><img src="ferias.png" alt="Imagem 1"></div>
+    <div class="slide"><img src="viajar-resorts-brasil-pacotes-resorts-eco-turismo-brasil-roteiros-eco-turismo-ecoturismo-brasil-resorts-eco-tur-turismo-ecologico-brasil-resorts-turismo-ecologico1.jpg" alt="Imagem 2"></div>
+    <div class="slide"><img src="12-cidades-para-cada-mes-brasil-2025-clube-candeias.jpeg" alt="Imagem 3"></div>
+  </div>
+</section>
+
+<script>
+  const botaoAcessibilidade = document.getElementById("toggle-acessibilidade");
+
+  botaoAcessibilidade.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+  });
+</script>
+
+</body>
+<script src="suam.js"></script>
+
+<section class="clima">
+  <h2>Clima em várias regiões do Brasil</h2>
+  <div class="clima-container">
+    <div class="clima-card" id="clima-norte">Norte: Carregando...</div>
+    <div class="clima-card" id="clima-nordeste">Nordeste: Carregando...</div>
+    <div class="clima-card" id="clima-centro">Centro-Oeste: Carregando...</div>
+    <div class="clima-card" id="clima-sudeste">Sudeste: Carregando...</div>
+    <div class="clima-card" id="clima-sul">Sul: Carregando...</div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-logo">
+      SUAM <span>VIAGEM</span>
+    </div>
+    <div class="footer-links">
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Termos de Uso</a>
+      <a href="#">Contato</a>
+      <button id="toggle-acessibilidade">🌓 Acessibilidade</button>
+    </div>
+    <div class="footer-social">
+      <a href="#" title="Instagram">📷</a>
+      <a href="#" title="Facebook">📘</a>
+      <a href="#" title="WhatsApp">💬</a>
+    </div>
+    <p>&copy; 2025 Suam Viagem. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+</html>

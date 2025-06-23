@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Regiões do Brasil</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    .menu {
+      background-color: #64b5f6;
+      border-bottom: 3px solid #a3cc00;
+      display: flex;
+      justify-content: space-around;
+      padding: 15px 0;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .menu a:hover {
+      text-decoration: underline;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 30px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      width: 260px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .titulo {
+      font-weight: bold;
+      margin: 10px 0 5px;
+      font-size: 16px;
+      color: #222;
+    }
+
+    .local {
+      color: #555;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    .regiao {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="menu">
+    <a onclick="mostrarRegiao('norte')">Norte</a>
+    <a onclick="mostrarRegiao('nordeste')">Nordeste</a>
+    <a onclick="mostrarRegiao('centro')">Centro-Oeste</a>
+    <a onclick="mostrarRegiao('sudeste')">Sudeste</a>
+    <a onclick="mostrarRegiao('sul')">Sul</a>
+  </div>
+
+  <div id="norte" class="regiao">
+    <h2>Região Norte</h2>
+    <div class="cards">
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+            <img src="fervedouro-dos-buritis.jpg" alt="Fervedouro Buritis">
+            <p class="titulo">Fervedouro Buritis</p>
+            <p class="local">Fervedouro Buritis (TO)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+            <img src="dunasalapão.jpg" alt="Dunas do Jalapão">
+            <p class="titulo">Dunas do Jalapão</p>
+            <p class="local">Dunas do Jalapão (TO)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src="bosquerodrigues.jpg" alt="Bosque Rodrigues Alves">
+          <p class="titulo">Bosque Rodrigues Alves</p>
+          <p class="local">Bosque Rodrigues Alves (PA)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src="mangaldasgarças.jpg" alt="Mangal das Garças">
+          <p class="titulo">Mangal das Garças</p>
+          <p class="local">Mangal das Garças (PA)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src="parquenacionaltumucumaque.jpg" alt="Parque Nacional Montanhas do Tumucumaque">
+          <p class="titulo">Parque Nacional Montanhas do Tumucumaque</p>
+          <p class="local">Montanhas do Tumucumaque (AP)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src="ilhademarajó.jpg" alt="Ilha de Marajó">
+          <p class="titulo">Ilha de Marajó</p>
+          <p class="local">Ilha de Marajó (PA)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src="parquecesamar.jpg" alt="Parque Cesamar">
+          <p class="titulo">Parque Cesamar</p>
+          <p class="local">Parque Cesamar (TO)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src="praçadogirassol.jpg" alt="Praça do Girassol">
+          <p class="titulo">Praça do Girassol</p>
+          <p class="local">Praça do Girassol (TO)</p>
+        </div>
+        </div>
+    </div>
+  </div>
+
+  <div id="nordeste" class="regiao">
+    <h2>Região Nordeste</h2>
+    <div class="cards">
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+            <img src="porto de galinhas.jpg" alt="Porto de Galinhas">
+            <p class="titulo">Porto de Galinhas</p>
+            <p class="local">Porto de Galinhas (PE)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src="fernandodenoronha.jpg" alt="Fernando de Noronha">
+          <p class="titulo">Fernando de Noronha</p>
+          <p class="local">Fernando de Noronha (PE)</p>
+        </div>
+        </div>
+        <div class="card">
+          <img src="pocoazul.jpg" alt="Poço Azul">
+          <p class="titulo">Poço Azul</p>
+          <p class="local">Poço Azul (MA)</p>
+        </div>
+        <div class="card">
+            <img src="lençois.jpg" alt="Lençóis Maranhenses">
+            <p class="titulo">Lençóis Maranhenses</p>
+            <p class="local">Lençóis Maranhenses (MA)</p>
+        </div>
+        <div class="card">
+          <img src="MorrodeSaoPaulo.jpg" alt="Morro de São Paulo">
+          <p class="titulo">Morro de São Paulo</p>
+          <p class="local">Morro de São Paulo (BA)</p>
+        </div>
+        <div class="card">
+          <img src="chapadadiamantina.jpg" alt="Chapada Diamantina">
+          <p class="titulo">Chapada Diamantina</p>
+          <p class="local">Chapada Diamantina (BA)</p>
+        </div>
+        <div class="card">
+          <img src="Jericoacoara.jpg" alt="Jericoacoara">
+          <p class="titulo">Jericoacoara</p>
+          <p class="local">Jericoacoara (CE)</p>
+        </div>
+        <div class="card">
+          <img src="praiadepontagrossa.jpg" alt="Praia de Ponta Grossa">
+          <p class="titulo">Praia de Ponta Grsosa</p>
+          <p class="local">Praia de Ponta Grossa (CE)</p>
+        </div>
+    </div>
+  </div>
+
+  <div id="centro" class="regiao">
+    <h2>Região Centro-Oeste</h2>
+    <div class="cards">
+     <div class="card">
+        <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+        <img src="chapadadosguimaraes.jpg" alt="Chapada dos Guimarães">
+        <p class="titulo">Chapada dos Guimarães</p>
+        <p class="local">Chapada dos Guimarães (MS)</p>
+     </div>
+     </div>
+
+     <div class="card">
+      <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+        <img src="grutadomimoso.jpg" alt="Gruta do Mimoso">
+        <p class="titulo">Gruta do Mimoso</p>
+        <p class="local">Gruta do Mimoso(MS)</p>
+     </div>
+     </div>
+     <div class="card">
+      <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+      <img src="cachoeiradecouros.jpg" alt="Cachoeira de Couros">
+      <p class="titulo">Cachoreira de Couros</p>
+      <p class="local">Cachoeira de Couros (GO)</p>
+     </div>
+     </div>
+     <div class="card">
+      <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+      <img src="chapadadosveadeiroos.jpg" alt="Chapada dos Veadeiros">
+      <p class="titulo">Chapada dos Veadeiros</p>
+      <p class="local">Chapada dos Veadeiros (GO)</p>
+     </div>
+     </div>
+     <div class="card">
+      <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+      <img src="morrodosventos.jpg" alt="Morro dos Ventos">
+      <p class="titulo">Morro dos Ventos</p>
+      <p class="local">Morro dos Ventos (MT)</p>
+     </div>
+     </div>
+     <div class="card">
+      <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+      <img src="camponovodoparecis.jpg" alt="Campo Novo do Parecis">
+      <p class="titulo">Campo Novo do Parecis</p>
+      <p class="local">Campo Novo do Parecis (MT)</p>
+     </div>
+     </div>
+     <div class="card">
+      <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+      <img src="parquenacionalchapada.jpg" alt="Parque Nacional Chapada dos Veadeiros">
+      <p class="titulo">Parque Nacional Chapada dos Veadeiros</p>
+      <p class="local">Chapada dos Veadeiros (GO)</p>
+     </div>
+     </div>
+     <div class="card">
+      <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+      <img src="jardimjapones.jpg" alt="Jardim Japonês">
+      <p class="titulo">Jardim Japonês</p>
+      <p class="local">Jardim Japonês (GO)</p>
+     </div>
+     </div>
+    </div>
+  </div>
+
+  <div id="sudeste" class="regiao">
+    <h2>Região Sudeste</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+        <img src="cristo redentor.jpg" alt="Cristo Redentor">
+        <p class="titulo">Cristo Redentor</p>
+        <p class="local">Rio de Janeiro (RJ)</p>
+      </div>
+      </div>
+      <div class="card">
+        <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+        <img src="pão de acucar.jpg" alt="Pão de açúcar">
+        <p class="titulo">Pão de Açúcar</p>
+        <p class="local">Pão de Açúcar (RJ)</p>
+      </div>
+      </div>
+      <div class="card">
+        <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+        <img src="teatro municipal de sp.jpg" alt="Teatro Municipal">
+        <p class="titulo">Teatro Municipal</p>
+        <p class="local">Teatro Municiapl (SP)</p>
+      </div>
+      </div>
+      <div class="card">
+        <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+        <img src="parque ibirapuera.jpg" alt="Parque Ibirapuera">
+        <p class="titulo">Parque Ibirapuera</p>
+        <p class="local">Parque Ibirapuera (SP)</p>
+      </div>
+      </div>
+      <div class="card">
+        <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+        <img src="ouropreeto.jpg" alt="Ouro Preto">
+        <p class="titulo">Ouro Preto</p>
+        <p class="local">Ouro Preto (MG)</p> 
+      </div>
+      </div>
+      <div class="card">
+        <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+        <img src="capitolio.jpg" alt="Capitólio">
+        <p class="titulo">Capitólio</p>
+        <p class="local">Capitólio (MG)</p>
+      </div>
+      </div>
+      <div class="card">
+        <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+        <img src="praiadacosta.jpg" alt="Praia da Costa">
+        <p class="titulo">Praia da Costa</p>
+        <p class="local">Praia da Costa (ES)</p>
+      </div>
+      </div>
+      <div class="card">
+        <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+        <img src="pedraazul.jpg" alt="Parque da Pedra Azul">
+        <p class="titulo">Parque Estadual da Pedra Azul</p>
+        <p class="local">Parque da Pedra Azul (ES)</p>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="sul" class="regiao">
+    <h2>Região Sul</h2>
+    <div class="cards">
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+            <img src="gramado.jpg.jpg" alt="Gramado">
+            <p class="titulo">Gramado</p>
+            <p class="local">Gramado (RS)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+            <img src="terradoparquemagico.jpg" alt="Terra do Parque Mágico Florybal">
+            <p class="titulo">Parque Mágico Florybal</p>
+            <p class="local">Parque Mágico Florybal (RS)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src="ilhadomel.jpg" alt="Ilha do Mel">
+          <p class="titulo">Ilha do Mel</p>
+          <p class="local">Ilha do Mel (PR)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src="foz do iguaço.jpg" alt="Foz do Iguaçu">
+          <p class="titulo">Foz do Iguaçu</p>
+          <p class="local">Foz do Iguaçu (PR)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src="parquegermanica.jpg" alt="Parque Vila Germânica">
+          <p class="titulo">Parque Vila Germânica</p>
+          <p class="local">Parque Vila Germânica (SC)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src="betocarrero.jpg" alt="Beto Carrero">
+          <p class="titulo">Beto Carrero</p>
+          <p class="local">Beto Carrero (SC)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src="parquevilavelho.jpg" alt="Parque Vila Velha">
+          <p class="titulo">Parque Vila Velha</p>
+          <p class="local">Parque Vila Velha (PR)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src="telefericodaserra.jpg" alt="Teleférico Parque da Serra">
+          <p class="titulo">Telefréico Parque da Serra</p>
+          <p class="local">Parque da Serra (RS)</p>
+        </div>
+        </div>
+    </div>
+  </div>
+
+  <script>
+    function mostrarRegiao(id) {
+      const regioes = document.querySelectorAll('.regiao');
+      regioes.forEach(function(regiao) {
+        regiao.style.display = 'none';
+      });
+
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>

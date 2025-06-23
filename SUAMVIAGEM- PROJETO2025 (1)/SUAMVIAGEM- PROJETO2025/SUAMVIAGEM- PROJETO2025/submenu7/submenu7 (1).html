@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Regiões do Brasil</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+
+    .menu {
+      background-color: #64b5f6;
+      border-bottom: 3px solid #a3cc00;
+      display: flex;
+      justify-content: space-around;
+      padding: 15px 0;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .menu a:hover {
+      text-decoration: underline;
+    }
+
+
+    h2 {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 24px;
+      color: #333;
+    }
+
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 30px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      width: 260px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .titulo {
+      font-weight: bold;
+      margin: 10px 0 5px;
+      font-size: 16px;
+      color: #222;
+    }
+
+    .local {
+      color: #555;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+
+  <div class="menu">
+    <a href="#">Norte</a>
+    <a href="#">Nordeste</a>
+    <a href="#">Centro-Oeste</a>
+    <a href="#">Sudeste</a>
+    <a href="#">Sul</a>
+  </div>
+
+
+  <h2>Região Sudeste</h2>
+
+  <div class="cards">
+    <div class="card">
+    <img src="cristo redentor.jpg" alt="Cristo Redentor">
+      <p class="titulo">Cristo Redentor</p>
+      <p class="local">Rio de Janeiro (RJ)</p>
+    </div>
+    <div class="card">
+      <img src="pão de acucar.jpg" alt="Bondinho do pão de açúcar">
+      <p class="titulo">Pão de açúcar</p>
+      <p class="local">Rio de Janeiro (RJ)</p>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+    <img src="aparecida.jpg" alt="Aparecida do Norte">
+      <p class="titulo">Parque Ibirapuera</p>
+      <p class="local">São Paulo (SP) </p>
+    </div>
+    <div class="card">
+      <img src="teatro municipal de sp.jpg" alt="Bondinho do pão de açúcar">
+      <p class="titulo">Pão de açúcar</p>
+      <p class="local">São Paulo (SP) </p>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+    <img src="minas.jpg" alt="Diamantina">
+      <p class="titulo">Chapada Diamantina</p>
+      <p class="local">Minas Gerais</p>
+    </div>
+    <div class="card">
+      <img src="ouro preto.jpg" alt="Ouro preto ">
+      <p class="titulo">Ouro preto</p>
+      <p class="local">Minas Gerais</p>
+    </div>
+  </div>
+
+
+  <h2>Região Nordeste</h2>
+
+  <div class="cards">
+    <div class="card">
+    <img src="porto de galinhas.jpg" alt="Porto de galinhas">
+      <p class="titulo">Porto de galinhas</p>
+      <p class="local">Pernambuco</p>
+    </div>
+    <div class="card">
+      <img src="lençois.jpg" alt="Lençois maranhenses">
+      <p class="titulo">Lençois maranhenses</p>
+      <p class="local">Maranhão</p>
+    </div>
+    <div class="card">
+      <img src="diamantina.jpg" alt="Diamantina">
+        <p class="titulo">Chapada Diamantina</p>
+        <p class="local">Bahía</p>
+      </div>
+    
+      <div class="card">
+        <img src="Centro Histórico de Salvador da Bahia.jpg" alt="Centro Histórico de Salvador da Bahia">
+          <p class="titulo">Centro Histórico de Salvador da Bahia</p>
+          <p class="local">Salvador</p>
+        </div>
+  </div>
+  
+ <h2>Região Sul</h2>
+
+  <div class="cards">
+    <div class="card">
+    <img src="beto.jpg" alt="Beto Carrero World">
+      <p class="titulo">Beto Carrero World</p>
+      <p class="local">Santa Catarina</p>
+    </div>
+
+    <div class="card">
+      <img src="foz do iguaço.jpg" alt="Foz do Iguaçu">
+      <p class="titulo">Foz do Iguaçu</p>
+      <p class="local">Fronteira</p>
+    </div>
+
+    <div class="card">
+      <img src="gramado.p.jpg" alt="Gramado">
+        <p class="titulo">Gramado</p>
+        <p class="local">Gramado</p>
+      </div>
+    
+      <div class="card">
+        <img src="bosque.jpg" alt="Bosque Alemão">
+          <p class="titulo">Bosque Alemão</p>
+          <p class="local">Curitíba</p>
+        </div>
+  </div>
+
+
+</body>
+</html>

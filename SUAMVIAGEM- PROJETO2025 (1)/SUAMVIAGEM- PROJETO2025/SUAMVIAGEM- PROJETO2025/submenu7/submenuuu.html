@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Regiões do Brasil</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    .menu {
+      background-color: #64b5f6;
+      border-bottom: 3px solid #a3cc00;
+      display: flex;
+      justify-content: space-around;
+      padding: 15px 0;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .menu a:hover {
+      text-decoration: underline;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 30px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      width: 260px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .titulo {
+      font-weight: bold;
+      margin: 10px 0 5px;
+      font-size: 16px;
+      color: #222;
+    }
+
+    .local {
+      color: #555;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    .regiao {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="menu">
+    <a onclick="mostrarRegiao('norte')">Norte</a>
+    <a onclick="mostrarRegiao('nordeste')">Nordeste</a>
+    <a onclick="mostrarRegiao('centro')">Centro-Oeste</a>
+    <a onclick="mostrarRegiao('sudeste')">Sudeste</a>
+    <a onclick="mostrarRegiao('sul')">Sul</a>
+  </div>
+
+  <div id="norte" class="regiao">
+    <h2>Região Norte</h2>
+    <div class="cards">
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+            <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuqKyJyxMO2w2tkhNaV7zweTg-_N3fVoIbTg&s alt="Fervedouro Buritis">
+            <p class="titulo">Fervedouro Buritis</p>
+            <p class="local">Fervedouro Buritis (TO)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+            <img src=https://res.cloudinary.com/worldpackers/image/upload/c_limit,f_auto,q_auto,w_1140/dnghnbiw07fu1fxwky9x alt="Dunas do Jalapão">
+            <p class="titulo">Dunas do Jalapão</p>
+            <p class="local">Dunas do Jalapão (TO)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src=https://viagemeturismo.abril.com.br/wp-content/uploads/2016/12/jardim-botanico-bosque-rodrigues-alves-belem.jpeg alt="Bosque Rodrigues Alves">
+          <p class="titulo">Bosque Rodrigues Alves</p>
+          <p class="local">Bosque Rodrigues Alves (PA)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src=https://mangaldasgarcas.com.br/wp-content/uploads/2020/08/mangal_1024-1.jpg alt="Mangal das Garças">
+          <p class="titulo">Mangal das Garças</p>
+          <p class="local">Mangal das Garças (PA)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh8wPEFPUNm0l3sY5hQCirwPnvmBXyqAUMwA&s alt="Parque Nacional Montanhas do Tumucumaque">
+          <p class="titulo">Parque Nacional Montanhas do Tumucumaque</p>
+          <p class="local">Montanhas do Tumucumaque (AP)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src=https://www.tevejopelomundo.com.br/wp-content/uploads/2019/11/ilha-de-marajo.jpg alt="Ilha de Marajó">
+          <p class="titulo">Ilha de Marajó</p>
+          <p class="local">Ilha de Marajó (PA)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src="https://pit.turismo.to.gov.br/imagens/atracoes/1644511045EywMxxzEDa.jpg alt="Parque Cesamar">
+          <p class="titulo">Parque Cesamar</p>
+          <p class="local">Parque Cesamar (TO)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src=https://tocaemdestaque.com.br/wp-content/uploads/2023/09/praca-giracoes-palmas.jpg alt="Praça do Girassol">
+          <p class="titulo">Praça do Girassol</p>
+          <p class="local">Praça do Girassol (TO)</p>
+        </div>
+        </div>
+    </div>
+  </div>
+
+  <div id="nordeste" class="regiao">
+    <h2>Região Nordeste</h2>
+    <div class="cards">
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+            <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXLOP5EFzbg2EVzvA1ryTNxuOOn-p3L5TAqA&s alt="Porto de Gainhas">
+            <p class="titulo">Porto de Galinhas</p>
+            <p class="local">Porto de Galinhas (PE)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src=https://revistasagarana.com.br/wp-content/uploads/2011/10/revistasagarana-fernandodenoronha-fotosjeanyvesdonnardnoronha-2009-a-591-950x634.jpg alt="Fernando de Noronha">
+          <p class="titulo">Fernando de Noronha</p>
+          <p class="local">Fernando de Noronha (PE)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src=https://imagedelivery.net/EafvxYlk8cSUsWEWsetEdQ/55402474-d5d1-42c5-3f95-89449e7df600/w=900 alt="Poço Azul">
+          <p class="titulo">Poço Azul</p>
+          <p class="local">Poço Azul (MA)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+            <img src=https://revista.bancorbras.com.br/wp-content/uploads/2023/12/Dunas-de-areias_Maranhao-scaled.jpgalt="Lençóis Maranhenses">
+            <p class="titulo">Lençóis Maranhenses</p>
+            <p class="local">Lençóis Maranhenses (MA)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLFL2ow8rEctPX3JemaB3KWAFPPOUsE5Svag&s alt="Morro de São Paulo">
+          <p class="titulo">Morro de São Paulo</p>
+          <p class="local">Morro de São Paulo (BA)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src=https://i1.wp.com/pisa.tur.br/blog/wp-content/uploads/2018/06/diamantina_capablog.jpg?fit=1024%2C448&ssl=1 alt="Chapada Diamantina">
+          <p class="titulo">Chapada Diamantina</p>
+          <p class="local">Chapada Diamantina (BA)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnMO7TLqR0iwbPiWzJFxZYxRTxB9lG41elw&s alt="Jericoacoara">
+          <p class="titulo">Jericoacoara</p>
+          <p class="local">Jericoacoara (CE)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUQVX9hPP8Gebv-U0SRd09CHtCFZFtI8VVjg&s alt="Praia de Ponta Grossa">
+          <p class="titulo">Praia de Ponta Grsosa</p>
+          <p class="local">Praia de Ponta Grossa (CE)</p>
+        </div>
+        </div>
+    </div>
+  </div>
+
+  <div id="centro" class="regiao">
+    <h2>Região Centro-Oeste</h2>
+    <div class="cards">
+     <div class="card">
+      <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+        <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdZiJqmcqEDW7Y2sBPj5s0XNvTFt9klpBCFA&s alt="Chapada dos Guimarães">
+        <p class="titulo">Chapada dos Guimarães</p>
+        <p class="local">Chapada dos Guimarães (MS)</p>
+     </div>
+     </div>
+     <div class="card">
+      <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+        <img src=https://www.grutadomimoso.com.br/media/bonito-mato-grosso-do-sul-gruta-do-mimoso.jpg alt="Gruta do Mimoso">
+        <p class="titulo">Gruta do Mimoso</p>
+        <p class="local">Gruta do Mimoso(MS)</p>
+     </div>
+     </div>
+     <div class="card">
+      <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+      <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMzcgYh2jKuRrc9xnYB32w1nxZO2IPihSfSg&s alt="Cachoeira de Couros">
+      <p class="titulo">Cachoreira de Couros</p>
+      <p class="local">Cachoeira de Couros (GO)</p>
+     </div>
+     </div>
+     <div class="card">
+      <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+      <img src=https://levesemdestino.com/wp-content/uploads/2016/01/dicas-gerais-dicas-de-viagem-chapada-dos-veadeiros-goias-cachoeiras-cachoeira-santa-barbara-2-1.jpg alt="Chapada dos Veadeiros">
+      <p class="titulo">Chapada dos Veadeiros</p>
+      <p class="local">Chapada dos Veadeiros (GO)</p>
+     </div>
+     </div>
+     <div class="card">
+      <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+      <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShgKUz6b2-0VKWR2EWKOx-276LpjWDoYt9vg&s alt="Morro dos Ventos">
+      <p class="titulo">Morro dos Ventos</p>
+      <p class="local">Morro dos Ventos (MT)</p>
+     </div>
+     </div>
+     <div class="card">
+      <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+      <img src="https://blog.blablacar.com.br/wp-content/uploads/2024/07/balneario-rio-verde-mt.webp" alt="Campo Novo do Parecis">
+      <p class="titulo">Campo Novo do Parecis</p>
+      <p class="local">Campo Novo do Parecis (MT)</p>
+     </div>
+     </div>
+     <div class="card">
+      <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+      <img src=https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/d4/15/ee/lugar-lindo.jpg?w=1200&h=-1&s=1 alt="Parque Nacional Chapada dos Veadeiros">
+      <p class="titulo">Parque Nacional Chapada dos Veadeiros</p>
+      <p class="local">Chapada dos Veadeiros (GO)</p>
+     </div>
+     </div>
+     <div class="card">
+      <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+      <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTumFc2cgd6w3tZ7z1paMjbJNazD5b0-8MQ0A&salt="Jardim Japonês">
+      <p class="titulo">Jardim Japonês</p>
+      <p class="local">Jardim Japonês (GO)</p>
+     </div>
+     </div>
+    </div>
+  </div>
+
+  <div id="sudeste" class="regiao">
+    <h2>Região Sudeste</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+        <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAKhoiuX1QnfueFnIQDWh4PbjIXZTRNmOGPw&s alt="Cristo Redentor">
+        <p class="titulo">Cristo Redentor</p>
+        <p class="local">Rio de Janeiro (RJ)</p>
+      </div>
+      </div>
+      <div class="card">
+        <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+        <img src=https://super.abril.com.br/wp-content/uploads/2021/11/deriva-continental_site.jpg?crop=1&resize=1212,909 alt="Pão de açúcar">
+        <p class="titulo">Pão de Açúcar</p>
+        <p class="local">Pão de Açúcar (RJ)</p>
+      </div>
+      </div>
+      <div class="card">
+        <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+        <img src=https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Teatro_Municipal_de_S%C3%A3o_Paulo_8.jpg/1200px-Teatro_Municipal_de_S%C3%A3o_Paulo_8.jpgalt="Teatro Municipal">
+        <p class="titulo">Teatro Municipal</p>
+        <p class="local">Teatro Municipal (SP)</p>
+      </div>
+      </div>
+      <div class="card">
+        <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+        <img src=https://grupospimovel.s3.amazonaws.com/Imagens/Noticias/Sistema/mercado-imobiliario/Parque_Ibirapuera.jpg alt="Parque Ibirapuera">
+        <p class="titulo">Parque Ibirapuera</p>
+        <p class="local">Parque Ibirapuera (SP)</p>
+      </div>
+      </div>
+      <div class="card">
+        <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+        <img src=https://imgmd.net/images/v1/guia/1699207/ouro-preto-206-c.jpg alt="Ouro Preto">
+        <p class="titulo">Ouro Preto</p>
+        <p class="local">Ouro Preto (MG)</p> 
+      </div>
+      </div>
+      <div class="card">
+        <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+        <img src=https://irp.cdn-website.com/b4aad4f5/dms3rep/multi/lago-de-furnas-capitolio-minas-gerais.jpg alt="Capitólio">
+        <p class="titulo">Capitólio</p>
+        <p class="local">Capitólio (MG)</p>
+      </div>
+      </div>
+      <div class="card">
+        <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+        <img src=https://images.ctfassets.net/uzue8dgm4ubt/4YIFzd2Gj3d5krPAvW4xul/82e2c602a7b691855fbc540b3e8fcdcb/Praia_da_Costa_Vilha_Velha.jpg alt="Praia da Costa">
+        <p class="titulo">Praia da Costa</p>
+        <p class="local">Praia da Costa (ES)</p>
+      </div>
+      </div>
+      <div class="card">
+        <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+        <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSDfe6fcdggTxvCc3r3mjgaydEuDv5t-AEMA&s alt="Parque da Pedra Azul">
+        <p class="titulo">Parque Estadual da Pedra Azul</p>
+        <p class="local">Parque da Pedra Azul (ES)</p>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="sul" class="regiao">
+    <h2>Região Sul</h2>
+    <div class="cards">
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+            <img src=https://blog.gramadosuaviagem.com.br/wp-content/uploads/2025/02/MiniMundoNeve.webp alt="Gramado">
+            <p class="titulo">Gramado</p>
+            <p class="local">Gramado (RS)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+            <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8x-u3ceiSGfL4KAyKRhgVk9O1qghe0geCIw&s alt="Terra do Parque Mágico Florybal">
+            <p class="titulo">Parque Mágico Florybal</p>
+            <p class="local">Parque Mágico Florybal (RS)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2J_F-E0diJS8yAsMd3jOPC5Intbg1Y00bbg&salt="Ilha do Mel">
+          <p class="titulo">Ilha do Mel</p>
+          <p class="local">Ilha do Mel (PR)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src=https://viagemeturismo.abril.com.br/wp-content/uploads/2022/05/waterfall-g14a4a7585_1920.jpg alt="Foz do Iguaçu">
+          <p class="titulo">Foz do Iguaçu</p>
+          <p class="local">Foz do Iguaçu (PR)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX4Yg_9yLDHfiC_IDSnRgO99-I88zJ7_lkug&s" alt="Parque Vila Germânica">
+          <p class="titulo">Parque Vila Germânica</p>
+          <p class="local">Parque Vila Germânica (SC)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPiqcVfTbTrYoi2C36laWxQRkumlwZezdIfg&s alt="Beto Carrero">
+          <p class="titulo">Beto Carrero</p>
+          <p class="local">Beto Carrero (SC)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src=https://parquevilavelha.com.br/wp-content/uploads/2020/07/parque-vila-velha-fica-perto-de-curitiba.jpg alt="Parque Vila Velha">
+          <p class="titulo">Parque Vila Velha</p>
+          <p class="local">Parque Vila Velha (PR)</p>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card" onclick="window.location.href='chapada.html'" style="cursor: pointer;">
+          <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdSRT95nIb54TRznhFaO_cHqYZRFuVI8mIkQ&s alt="Teleférico Parque da Serra">
+          <p class="titulo">Teleférico Parque da Serra</p>
+          <p class="local">Parque da Serra (RS)</p>
+        </div>
+        </div>
+    </div>
+  </div>
+
+  <script>
+    function mostrarRegiao(id) {
+      const regioes = document.querySelectorAll('.regiao');
+      regioes.forEach(function(regiao) {
+        regiao.style.display = 'none';
+      });
+
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
